@@ -32,15 +32,47 @@ throw new RuntimeException(userAlreadyExistStr);
     \subsubsection{Readability of Variables}
     \par e.g.userSignupOkStr/userLoginStr
     
-    
  \subsubsection{Proper comments and consistent comment style}
    \begin{lstlisting}[language=java]
 //user exist and the password correct
-\end{lstlisting}   \section{Problems and Methods}
+\end{lstlisting}   
+\section{Problems and Methods}
     \subsection{the error caused by nextLine( )}
     \par solution: add another line of "in.nextLine( )" to absorb the redundant line feed.
     \subsection{Code Checking: Password or Certificate }
     \par solution: rename the password-related constants (since this lab does not relate to encryption)
+
+
+\section{testing and optimizing}
+	\subsection{testing}
+	\par result:find two problems: 
+		\subsubsection{1. the PriceService.cost module output:}
+		\par `` name: null, size: 1, number: 2, price:4\$ \\ 20\$  ''
+		\par 	solution:add two construct functions and changed the PriceService.cost function
+		\par
+  \begin{lstlisting}[language=java]
+public Cappuccino() {
+        setName("Cappuccino");
+    }
+public Espresso() {
+        setName("Espresso");
+    }
+\end{lstlisting}
+		\subsubsection{2. the logic of login after signing up}
+		\par our program let the user to login automatically after signing up before. When the TA said that user should login in by themself after signing up, I changed the logic of Lab2Application.main function.
+
+	\subsection{optimizing}
+	\par the name and password's validity verification:
+	\par at first we write two while loop  for the null value and mismatching value condition, we merged them to one while loop.
+\begin{lstlisting}[language=java]
+ while ((nameStr.equals("")) || (!nameStr.matches(InfoConstant.USER_REGEX))) {
+           ...
+        }
+\end{lstlisting}
+	
+	
+
+	
     
    
 
