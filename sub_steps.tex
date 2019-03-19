@@ -1,6 +1,49 @@
 \documentclass[./report.tex]{subfiles}
 \begin{document}
 
-BBB
+\section{the Design of Login and Signup}
+ \subsection{Idea and Method}
+ \emph {Note: we only consider the situations of login/signup failure mentioned in the requirement document, and other operation failures such as database/network errors are not included in the error handling.}
+ \subsubsection{A. Login}
+\par As the document says, login can be divided into two situations: login successfully (both the name and password are matched) and login failed (throw the runtime exception).
+\par Therefore, in the whole login method, we use "loginStatus", the private variable to record the status, and apply the if-else branches to these two situations: if the return value of the "getUser" method
+in "UserRepository" class is not null and the return value of "getPassword" method and the parameter user's password are the same, it goes to login successfully, and the logger record information.
+\par Otherwise, it goes to login failed. After logger, it will directly throw a runtime exception.
+ \subsubsection{B. Signup}
+\par Also, the signup part can be divided into two cases: signup successfully (the name can be used) and signup failed (the name already exists in the file).
+\par Therefore, in the whole signup method: if the name doesn't exist in the file, it means the name is not repetitive. So it goes to the catch branch so as to create the new user, and write the logger.
+\par Otherwise, it throws the runtime exception and write the logger.
+ \subsection{Encoding specification}
+  \subsubsection{Detailed Descriptions of Thrown Exceptions }
+\begin{lstlisting}[language=java]
+throw new RuntimeException(InfoConstant.USERNAME_OR_PASS_ERROR);
+throw new RuntimeException(userAlreadyExistStr);
+\end{lstlisting}
 
+  \subsubsection{Catch the Particular Exceptions }
+  \begin{lstlisting}[language=java]
+{
+...
+} catch (RuntimeException e){
+	.....
+}
+\end{lstlisting}
+  
+    \subsubsection{Readability of Variables}
+    \par e.g.userSignupOkStr/userLoginStr
+    
+    
+ \subsubsection{Proper comments and consistent comment style}
+   \begin{lstlisting}[language=java]
+//user exist and the password correct
+\end{lstlisting}   \section{Problems and Methods}
+    \subsection{the error caused by nextLine( )}
+    \par solution: add another line of "in.nextLine( )" to absorb the redundant line feed.
+    \subsection{Code Checking: Password or Certificate }
+    \par solution: rename the password-related constants (since this lab does not relate to encryption)
+    
+   
+
+	
+		
 \end{document}
