@@ -2,28 +2,39 @@
 \begin{document}
 
 \section{the Design of Login and Signup}
- \subsection{Idea and Method}
- \emph {Note: we only consider the situations of login/signup failure mentioned in the requirement document, and other operation failures such as database/network errors are not included in the error handling.}
- \subsubsection{A. Login}
+\emph {Note: we only consider the situations of login/signup failure mentioned in the requirement document, and other operation failures such as database/network errors are not included in the error handling.}
+ \subsection{Ideas and Methods: Login}
 \par As the document says, login can be divided into two situations: login successfully (both the name and password are matched) and login failed (throw the runtime exception).
 \par Therefore, in the whole login method, we use "loginStatus", the private variable to record the status, and apply the if-else branches to these two situations: if the return value of the "getUser" method
 in "UserRepository" class is not null and the return value of "getPassword" method and the parameter user's password are the same, it goes to login successfully, and the logger record information.
 \par Otherwise, it goes to login failed. After logger, it will directly throw a runtime exception.
- \subsubsection{B. Signup}
+\subsection{Ideas and Methods: Signup}
 \par Also, the signup part can be divided into two cases: signup successfully (the name can be used) and signup failed (the name already exists in the file).
-\par Therefore, in the whole signup method: if the name doesn't exist in the file, it means the name is not repetitive. So it goes to the catch branch so as to create the new user, and write the logger.
+\par Therefore, in the whole signup method: if the name doesn't exist in the file, it means the name is not repetitive. So, it goes to the catch branch so as to create the new user, and write the logger.
 \par Otherwise, it throws the runtime exception and write the logger.
-\subsubsection{C.Cost}
+\subsection{Ideas and Methods: Status checking}
+There are cases when our application wants to confirm the status of the user: whether he/she is logged in or not. In our implementation, a class variable is utilized to save the status of the user. Once he is logged in, the \emph{boolean} type variable will be switched to the \emph{true} status and be \emph{false} otherwise.
+\par
+Specifically, this flag variable is declared and defined in the \emph{AccountServiceImpl} class with the following code:
+\begin{lstlisting}[language=java]
+private static boolean loginStatus = false;
+\end{lstlisting}
+\par
+This function can be called via the method \emph{public boolean checkStatus()}.
+\subsection{Ideas and Methods: Order information}
+In this implementation, we will guide the user (the salesperson here) to input the order information step by step.  The console input might be replaced by other forms in the future, but the flow of steps in the order-placing process will not change. We will create the implementation of the certain coffee according to the user input and encapsulate the order information into the \emph{Map} object and then pass the \emph{Map} object as the argument to the \emph{cost} method so as to display the price information.
+
+\subsection{Ideas and Methods: Cost}
 \par The price of a cup of coffee consists of two parts: coffee cost and cup-type cost. Therefore, the \emph{cost} method in class \emph{Coffee} only needs to return the sum of the two costs. In order to get the cost of different cup types, I design a method called \emph{size2price}. And it works out the price with switch-case statement. In terms of the \emph{cost} method in class \emph{PriceService}, I only need to calculate the sum of all orders and output each order's information to the console.
-\par What's more, I create a class called \emph{Size}--which includes only three meaningful constant values--to express the cup types clearly. I think it maybe a good idea and it is very useful when to read codes.
- \subsection{Encoding specification}
-  \subsubsection{Detailed Descriptions of Thrown Exceptions }
+\par What's more, I create a class called \emph{Size}--which includes only three meaningful constant values--to express the cup types clearly. I think it may be a good idea and it is very useful when to read codes.
+ \section{Encoding specifications}
+  \subsection{Detailed Descriptions of Thrown Exceptions }
 \begin{lstlisting}[language=java]
 throw new RuntimeException(InfoConstant.USERNAME_OR_PASS_ERROR);
 throw new RuntimeException(userAlreadyExistStr);
 \end{lstlisting}
 
-  \subsubsection{Catch the Particular Exceptions }
+  \subsection{Catch the Particular Exceptions }
   \begin{lstlisting}[language=java]
 {
 ...
@@ -32,10 +43,10 @@ throw new RuntimeException(userAlreadyExistStr);
 }
 \end{lstlisting}
   
-    \subsubsection{Readability of Variables}
+    \subsection{Readability of Variables}
     \par e.g.userSignupOkStr/userLoginStr
     
- \subsubsection{Proper comments and consistent comment style}
+ \subsection{Proper comments and consistent comment style}
    \begin{lstlisting}[language=java]
 //user exist and the password correct
 \end{lstlisting}   
@@ -45,12 +56,11 @@ throw new RuntimeException(userAlreadyExistStr);
     \subsection{Code Checking: Password or Certificate }
     \par solution: rename the password-related constants (since this lab does not relate to encryption)
 
-
-\section{testing and optimizing}
-	\subsection{testing}
-	\par result:find two problems: 
-		\subsubsection{1. the PriceService.cost module output:}
-		\par `` name: null, size: 1, number: 2, price:4\$ \\ 20\$  ''
+\section{Testing and optimization}
+	\subsection{Testing}
+	\par We found two problems while examining our codes:
+		\subsubsection{1) the PriceService.cost module output:}
+		\par ``name: null, size: 1, number: 2, price:4\$ \\ 20\$  ''
 		\par 	solution:use the new CappuccinoRepositoryImpl() and new EspressoRepositoryImpl()
 		\par
   \begin{lstlisting}[language=java]
@@ -58,24 +68,15 @@ Coffee coffee = coffeeType == 1 ? new CappuccinoRepositoryImpl()
                 .getCappuccino("cappuccino") : new EspressoRepositoryImpl()
                 .getEspresso("espresso");
 \end{lstlisting}
-		\subsubsection{2. the logic of login after signing up}
-		\par our program let the user to login automatically after signing up before. When the TA said that user should login in by themself after signing up, I changed the logic of Lab2Application.main function.
+		\subsubsection{2) the logic of login after signing up}
+		\par our program let the user to login automatically after signing up before. When the TA said that user should login in by themselves after signing up, I changed the logic of Lab2Application.main function.
 
-	\subsection{optimizing}
-	\par the name and password's validity verification:
-	\par at first we write two while loop  for the null value and mismatching value condition, we merged them to one while loop.
+	\subsection{Optimization}
+	\par The name and password's validity verification:
+	\par At first, we write two while loop  for the null value and mismatching value condition, we merged them to one while loop.
 \begin{lstlisting}[language=java]
  while ((nameStr.equals("")) || (!nameStr.matches(InfoConstant.USER_REGEX))) {
            ...
         }
 \end{lstlisting}
-	
-	
-
-	
-    
-   
-
-	
-		
 \end{document}
