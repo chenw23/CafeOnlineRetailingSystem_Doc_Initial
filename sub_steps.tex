@@ -48,15 +48,12 @@ throw new RuntimeException(userAlreadyExistStr);
 	\par result:find two problems: 
 		\subsubsection{1. the PriceService.cost module output:}
 		\par `` name: null, size: 1, number: 2, price:4\$ \\ 20\$  ''
-		\par 	solution:add two construct functions and changed the PriceService.cost function
+		\par 	solution:use the new CappuccinoRepositoryImpl() and new EspressoRepositoryImpl()
 		\par
   \begin{lstlisting}[language=java]
-public Cappuccino() {
-        setName("Cappuccino");
-    }
-public Espresso() {
-        setName("Espresso");
-    }
+Coffee coffee = coffeeType == 1 ? new CappuccinoRepositoryImpl()
+                .getCappuccino("cappuccino") : new EspressoRepositoryImpl()
+                .getEspresso("espresso");
 \end{lstlisting}
 		\subsubsection{2. the logic of login after signing up}
 		\par our program let the user to login automatically after signing up before. When the TA said that user should login in by themself after signing up, I changed the logic of Lab2Application.main function.
