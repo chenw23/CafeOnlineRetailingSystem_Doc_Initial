@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fudan.se.lab2"},{"l":"fudan.se.lab2.constant"},{"l":"fudan.se.lab2.entity"},{"l":"fudan.se.lab2.repository"},{"l":"fudan.se.lab2.repository.impl"},{"l":"fudan.se.lab2.service"},{"l":"fudan.se.lab2.service.impl"},{"l":"fudan.se.lab2.util"}]
