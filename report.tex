@@ -29,11 +29,33 @@ Fudan University
 
 \subfile{sub_steps}
 
-\chapter{Interface Documentation}
-
-
-\chapter{Structure of  the project}
-
+\chapter{Further thoughts}
+\section{Factory mode application}
+It can be said that the main objects of the program are generated in the factory mode, such as two types of coffee objects and the user object.
+When we first started writing code, we didn't pay attention to this design and didn't take the appropriate approach. Instead, we created objects directly.
+When testing the program, we found some problems: the value of each field of the object was incorrect. 
+We examined for a while and found the reason: the object was not initialized in time.
+This process actually deepens our thinking about this pattern: the factory pattern is quite handy for creating large Numbers of objects and initializing them, but more importantly it maintains a secure encapsulation environment for creating objects.
+\section{Some questions about interface design}
+The TA initially defined \emph{coffee} as an interface with only one method \emph{cost}, which was really inappropriate, but fortunately it was later defined as an abstract class.
+There's an interface in there that I thought was very strange at first, which is \emph{setName()}.
+Subjectively, there is nothing wrong with a coffee having its own price.
+But if the two more detailed types of coffee still need to keep this method, I feel a little strange: since the coffee type has been determined, that is, the name is determined and the name will not be changed at all. Thus, this interface is meaningless.
+Later, I communicated with the TA and found that this was for the expansion of the later coffee category, that is to say, these two are only two big categorys, which can be further divided.
+This way, there is no problem with the interface.
+\section{Questions about data}
+Since we didn't have any database knowledge, the TA prepared CSV files to store the data.
+Maybe this is the first lab, and the data preparation is a little rough. One of the biggest mysteries is the cup data.
+If the price of coffee is related to the cup size, then this design is ok, but the price of coffee is not related to the cup size, the final price of each cup of coffee is related to the cup size.
+Therefore, such a data arrangement is a bit redundant, cup-shaped data should not be placed in the data file.
+\section{Others}
+The benefits of constant file creation, the benefits of encapsulation and interfaces, and the security of exception handling will not be covered here.
+I'd like to talk a little bit about why I don't like the idea of having two subclasses to inherit from one coffee class.
+We can see that both subclasses have methods which are same to their superclass, which means that both subclasses did almost no extension, and both subclasses implement superclass methods in exactly the same way.
+Therefore, I actually prefer to use an attribute to indicate the type of coffee rather than subclassing the two types because subclassing doesn't make much sense.
+Of course, you might say that there are a lot of differences between these two types, such as the price of the cup, the way to buy the cup, the way to make the cup, and so on.
+But these things come a long way, there is no need to go too far;
+However, even if these differences do exist it is possible to implement the corresponding content on one class with little variation in difficulty.
 
 
 \begin{thebibliography}{A}
