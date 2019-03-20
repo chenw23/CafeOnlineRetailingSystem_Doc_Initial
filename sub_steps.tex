@@ -13,6 +13,9 @@ in "UserRepository" class is not null and the return value of "getPassword" meth
 \par Also, the signup part can be divided into two cases: signup successfully (the name can be used) and signup failed (the name already exists in the file).
 \par Therefore, in the whole signup method: if the name doesn't exist in the file, it means the name is not repetitive. So it goes to the catch branch so as to create the new user, and write the logger.
 \par Otherwise, it throws the runtime exception and write the logger.
+\subsubsection{C.Cost}
+\par The price of a cup of coffee consists of two parts: coffee cost and cup-type cost. Therefore, the \emph{cost} method in class \emph{Coffee} only needs to return the sum of the two costs. In order to get the cost of different cup types, I design a method called \emph{size2price}. And it works out the price with switch-case statement. In terms of the \emph{cost} method in class \emph{PriceService}, I only need to calculate the sum of all orders and output each order's information to the console.
+\par What's more, I create a class called \emph{Size}--which includes only three meaningful constant values--to express the cup types clearly. I think it maybe a good idea and it is very useful when to read codes.
  \subsection{Encoding specification}
   \subsubsection{Detailed Descriptions of Thrown Exceptions }
 \begin{lstlisting}[language=java]
