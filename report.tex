@@ -44,8 +44,12 @@ Fudan University
 \chapter{Features tested in the project}
 \section{Login method}
 %Huang, Jiani below
+\par The whole test for login can be divided into two functions: the one for login successfully and the other for login failure.
+\subsection{Login successfully}
+\par assertTrue method is used in this test function.
 
-
+\subsection{Login failed}
+\par assertEquals method is used in this test function.  If we fail to login, a runtime exception will be thrown. Therefore, we should compare the message of exception with the expected string.
 
 %Huang, Jiani above
 \section{Sign up method}
