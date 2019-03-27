@@ -22,7 +22,29 @@ Fudan University
 \tableofcontents
 \chapter{Overview of this Lab}
 % Wang, Chen below
-
+\section{The Objectives of the Project}
+We are going to try to learn to use the code unit testing tools, e.g. JUnit/JMock, in this lab so as to experience test-driven development and the influence of the change in code quality and requirements on the process of development.
+\par
+The specifications, division of work and the detailed implementation of the work is shown in the sections below.
+\section{Specifications of the Lab}
+In this lab, we are required to accomplish the tasks including designing and implementing new interfaces, performing unit tesing design and development and some other works. Specifically, the works are in the form of the following parts:
+\begin{enumerate}
+\item Implement the interfaces as required in the lab requirements;
+\item Perform code unit testing design and develop code unit test;
+\item Link the code commits with the project work items in the project planning;
+\item Develop in groups based on Git and hand in the lab report.
+\par
+Our group members acted actively in their own roles together to finish the whole project and below are the detailed working results of our group.
+\end{enumerate}
+\section{The division of work in the team}
+\subsection{Division of work: Huang, Jiani}
+Build the JUnit environment and write all required environmental methods except the \emph{@test} method, such as \emph{@before} and \emph{@after}; write the \emph{@test} method for the \emph{login} method.
+\subsection{Division of work: Liu, Jiaxing}
+Write the \emph{checkName} and \emph{checkPassword} test method.
+\subsection{Division of work: Wang, Chen}
+Complete the \emph{checkName} and \emph{checkPassword} methods.
+\subsection{Division of work: Tang, Xinyue}
+Finish the test method of \emph{signUp}, \emph{checkStatus} and \emph{cost}.
 
 
 % Wang, Chen above
@@ -37,9 +59,43 @@ Fudan University
 %Huang, Jiani above
 \chapter{Features added to the project}
 % Wang, Chen below
+\section{User name checking}
+\subsection{Requirements for user name checking}
+The username should satisfy the following requirements:
+\begin{enumerate}
+\item The username must start with \textbf{starbb\_};
+\item The username can consist of \textbf{letters}, \textbf{numbers} and \textbf{underline}, excluding any other symbols;
+\item The username should have a length greater than or equal to 8 and less than 50.
+\end{enumerate}
+\subsection{Interface for the checking method}
 
-
-
+\begin{lstlisting}[language=java]
+/**
+ * Check whether the given name is valid
+ *
+ * @param name the given name to check
+ * @return whether the name is valid
+ */
+boolean checkName(String name);
+\end{lstlisting}
+\section{Password checking}
+\subsection{Requirements for user name checking}
+The password should satisfy the following requirements:
+\begin{enumerate}
+\item The password can consist of \textbf{letters}, \textbf{numbers} and \textbf{\_}, excluding any other symbols;
+\item The password must consist of all the three types, i.e. \textbf{letters}, \textbf{numbers} and \textbf{\_}, excluding any other symbols;
+\item The password should have a length greater than or equal to 8 and less than 100.
+\end{enumerate}
+\subsection{Interface for the checking method}
+\begin{lstlisting}[language=java]
+/**
+ * Check whether the given password is valid
+ *
+ * @param password the given password to check
+ * @return whether the password is valid
+ */
+boolean checkPassword(String password);
+\end{lstlisting}
 % Wang, Chen above
 \chapter{Features tested in the project}
 \section{Login method}
