@@ -154,9 +154,19 @@ Liu, Jiaxing fixed this problem by adding:
 %Tang, Xinyue above
 \section{Cost checking method}
 %Tang, Xinyue below
+\par The test for cost method can be divided into five functions.
 
+\subsection{testCostOK for cappuccino and espresso}
+\par we assertEquals the cost's result and the manually calculated value;
 
+\subsection{testCost for NumberError}
+\par catch a COFFEE NUMBER ERROR when the number of coffee is less than zero.
 
+\subsection{testCost for CupErrors}
+\par catch a CUP SIZE ERROR when the cup SIZE of coffee is less than 1 or more than 3.
+
+\subsection{testCost for Null}
+\par catch a ORDER Null when passing in a null value to the cost function
 %Tang, Xinyue above
 \begin{thebibliography}{A}
 
