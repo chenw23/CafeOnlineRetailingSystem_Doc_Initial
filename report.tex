@@ -110,8 +110,17 @@ boolean checkPassword(String password);
 %Huang, Jiani above
 \section{Sign up method}
 %Tang, Xinyue below
+\par The test for signUp can be divided into two functions: the one for signUp successfully and the other for signUp failure.
+\subsection{signUp successfully}
+\par assertTrue method is used in this test function.
+\par To make sure we use a name that doesn't exist in user.csv, I used Date to construct a new name.
+\begin{lstlisting}[language=java]
+    Date date = new Date();
+    String name = (new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss")).format(date);
+\end{lstlisting}
 
-
+\subsection{signUp failed}
+\par assertFalse method is used in this test function. SignUp function will return false if the user name already exists.
 
 %Tang, Xinyue above
 \section{Username checking method}
@@ -130,8 +139,17 @@ boolean checkPassword(String password);
 %Liu, Jiaxing above
 \section{Status checking method}
 %Tang, Xinyue below
+\par The test for status checking method can be divided into two functions: the one for user login successfully and the other for user has not logged in.
+\subsection{status is logged in }
+\par we let a true user to login and then assertTrue checkStatus;
 
-
+\subsection{status is not logged in}
+\par assertFalse method is used in this test function.
+this test works well when runing separately, but failed when runing the whole Lab2ApplicationTests program.
+Liu, Jiaxing fixed this problem by adding:
+\begin{lstlisting}[language=java]
+    @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+\end{lstlisting}
 
 %Tang, Xinyue above
 \section{Cost checking method}
