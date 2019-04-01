@@ -4,7 +4,6 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{subfiles}
-\lstset{language=bash}
 \lstset{numbers=right}
 \lstset{breaklines}
 \title{Lab Report for Software Engineering course \newline
@@ -27,7 +26,7 @@ We are going to try to learn to use the code unit testing tools, e.g. JUnit/JMoc
 \par
 The specifications, division of work and the detailed implementation of the work is shown in the sections below.
 \section{Specifications of the Lab}
-In this lab, we are required to accomplish the tasks including designing and implementing new interfaces, performing unit tesing design and development and some other works. Specifically, the works are in the form of the following parts:
+In this lab, we are required to accomplish the tasks including designing and implementing new interfaces, performing unit testing design and development and some other works. Specifically, the works are in the form of the following parts:
 \begin{enumerate}
 \item Implement the interfaces as required in the lab requirements;
 \item Perform code unit testing design and develop code unit test;
@@ -45,17 +44,10 @@ Complete the \emph{checkName()} and \emph{checkPassword()} test method.
 Implement the \emph{checkName()} and \emph{checkPassword()} methods.
 \subsection{Division of work: Tang, Xinyue}
 Finish the test method of \emph{signUp()}, \emph{checkStatus()} and \emph{cost()}.
-
-
 % Wang, Chen above
 \chapter{Tools adopted for quality analysis}
 %Huang, Jiani below
-
-
-
 \subfile{huang}
-
-
 %Huang, Jiani above
 \chapter{Features added to the project}
 % Wang, Chen below
@@ -68,7 +60,6 @@ The username should satisfy the following requirements:
 \item The username should have a length greater than or equal to 8 and less than 50.
 \end{enumerate}
 \subsection{Interface for the checking method}
-
 \begin{lstlisting}[language=java]
 /**
  * Check whether the given name is valid
@@ -77,6 +68,21 @@ The username should satisfy the following requirements:
  * @return whether the name is valid
  */
 boolean checkName(String name);
+\end{lstlisting}
+\subsection{Implementation of the checking method}
+\begin{lstlisting}[language=java]
+/**
+ * Check whether the given name is valid
+ * Any user name should start with starbb_, contain only characters, numbers and underscore
+ * The user name should also be of a length between 8 and 49
+ *
+ * @param name the given name to check
+ * @return whether the name is valid
+ */
+@Override
+public boolean checkName(String name) {
+    return name != null && name.matches(``^starbb_[a-zA-Z0-9_]{1,42}$'');
+}
 \end{lstlisting}
 \section{Password checking}
 \subsection{Requirements for user name checking}
@@ -96,25 +102,43 @@ The password should satisfy the following requirements:
  */
 boolean checkPassword(String password);
 \end{lstlisting}
+\subsection{Implementation of the checking method}
+\begin{lstlisting}[language=java]
+/**
+ * Check whether the given password is valid
+ * Any password should only contain and must contain all the three types of characters below:
+ * 1) English characters(upper case or lower case);
+ * 2) Numbers;
+ * 3) Underscore.
+ * In addition, the passwords should be of a length between 8 and 99
+ *
+ * @param password the given password to check
+ * @return whether the password is valid
+ */
+@Override
+public boolean checkPassword(String password) {
+    return password != null && password.matches(``^(?=.*[0-9].*)(?=.*[A-Za-z].*)(?=.*[_].*)[a-zA-Z0-9_]{8,99}$'');
+}
+\end{lstlisting}
 % Wang, Chen above
 \chapter{Features tested in the project}
 \section{Login method}
 %Huang, Jiani below
 \par The whole test for login can be divided into two functions: the one for login successfully and the other for login failure.
 \subsection{Login successfully}
-\par assertTrue method is used in this test function. If the login() method returns true, then the test method will be passed.
+\par The \emph{assertTrue} method is used in this test function. If the \emph{login()} method returns \emph{true}, then the test method will be passed.
 \subsection{Login failed}
-\par If we fail to login, a runtime exception will be thrown. AssertEquals method is used in this test function to handle the exception message. By comparing the two strings, we successfully test th login failure situation.
+\par If we fail to login, a runtime exception will be thrown. \emph{AssertEquals} method is used in this test function to handle the exception message. By comparing the two strings, we successfully test th login failure situation.
 \subsubsection{User Is Null}
- \par If the username input doesn't exist in the database, the exception message will be " Entity not found." 
+ \par If the username input doesn't exist in the database, the exception message will be ``Entity not found.''
 \subsubsection{Password Is Incorrect}
-\par If the username matches but password does not in the database, the exception message will be "password or username error.". 
+\par If the username matches but password does not in the database, the exception message will be ``password or username error.". 
 %Huang, Jiani above
 \section{Sign up method}
 %Tang, Xinyue below
-\par The test for signUp can be divided into two functions: the one for signUp successfully and the other for signUp failure.
+\par The test for \emph{signUp()} method can be divided into two functions: the one for sign up successfully and the other for sign up failure.
 \subsection{signUp successfully}
-\par assertTrue method is used in this test function.
+\par The \emph{assertTrue} method is used in this test function.
 \par To make sure we use a name that doesn't exist in user.csv, I used the \emph{Date} object to construct a new name.
 \begin{lstlisting}[language=java]
 Date date = new Date();
@@ -122,7 +146,7 @@ String name = (new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss")).format(date);
 \end{lstlisting}
 
 \subsection{signUp failed}
-\par assertFalse method is used in this test function. SignUp function will return false if the user name already exists.
+\par assertFalse method is used in this test function and the \emph{signUp()} function will return false if the user name already exists.
 
 %Tang, Xinyue above
 \section{Username checking method}
@@ -131,7 +155,7 @@ String name = (new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss")).format(date);
 \subsection{Legal name}
 \par I construct a string--\emph{starbb\_12AC}--and it begins with the string starbb\_, and contains letters and digits at the right length. Therefore, it's legal.
 \subsection{Illegal name}
-\par It's very easy to construct an illegal name. A null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to \textbf{Wang, Chen}'s advice, I take it into account.
+\par It's very easy to construct an illegal name. A null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to \textbf{Wang, Chen}'s advice, I take this problem into account.
 \par Username checking methods are more complex than other test methods, and they contain many situations. But in fact, they are very normal and easy to implement. According to the classification method mentioned in class, I should design 5 methods to check whether the length of tested name is legal. But to be easy, I just implement 3 methods for three types of name: the shorter one, the right one and the longer one, which don't include the two methods for just right ones.
 \begin{lstlisting}[language=java]
 @Test
@@ -159,7 +183,7 @@ public void testNameLongerThan49() {
 \par I construct a string--\emph{123\_abc12}--and it contains letters, digits and underline at the right length. Therefore, it's legal.
 \subsection{Illegal password}
 \par A legal password must contain all the three types: \textbf{letters}, \textbf{numbers} and \textbf{\_}. So in order to get a illegal password, there are many ways. Null password, a string without digits, a string without letters, a string without underline, a string with other special characters and a much shorter or longer one all are OK. So I design 7 methods to test. 
-\par There maybe a small trap in checking password. Well, if we couldn't find the differences between legal name and legal password,  we'll write some wrong codes. It's because a legal password must contain all the three types but a legal name is unnecessary to satify the need.
+\par There maybe a small trap in checking password. Well, if we couldn't find the differences between legal name and legal password,  we'll write some wrong codes. It's because a legal password must contain all the three types but a legal name is unnecessary to satisfy the need.
 %Liu, Jiaxing above
 \section{Status checking method}
 %Tang, Xinyue below
@@ -168,45 +192,39 @@ public void testNameLongerThan49() {
 \par We let a true user login and then call the \emph{checkStatus()} method. In this test, we \emph{assertTrue} on the return value of this method.
 \subsection{status is not logged in}
 \par assertFalse method is used in this test function.
-this test works well when runing separately, but failed when runing the whole Lab2ApplicationTests program.
+this test works well when running separately, but failed when running the whole \emph{Lab2ApplicationTests} program.
+\par
+This problem arises because we haven't designed the log out method in our application yet. Therefore, if the test method has a successful login and then calls the test-not-logged-in method, it will never pass. We tried to change the order of the methods so as to let this method appear first, but failed to change the order being tested. 
+\par
+After thorough analysis and further research into the \emph{JUnit} testing implementation, we found out that the test method will be executed in the order of the \emph{hash code} of the method, rather than the order they appear in the source code or the order of their name. Thankfully, \emph{JUnit} offers us a method of fixing the order of the tests and we adopted one of the methods in our implementation here in this lab.
+\par
 Liu, Jiaxing fixed this problem by adding:
 \begin{lstlisting}[language=java]
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 \end{lstlisting}
-
 %Tang, Xinyue above
 \section{Cost checking method}
 %Tang, Xinyue below
 \par The test for cost method can be divided into five functions.
 
 \subsection{testCostOK for cappuccino and espresso}
-\par we assertEquals the cost's result and the manually calculated value;
+\par We call the \emph{assertEquals} method on the cost's result and the manually calculated value;
 
 \subsection{testCost for NumberError}
-\par catch a COFFEE NUMBER ERROR when the number of coffee is less than zero.
+\par We will catch a \emph{COFFEE NUMBER ERROR} exception when the number of coffee is less than zero.
 
 \subsection{testCost for CupErrors}
-\par catch a CUP SIZE ERROR when the cup SIZE of coffee is less than 1 or more than 3.
+\par We will catch a \emph{CUP SIZE ERROR} exception when the cup SIZE of coffee is less than 1 or more than 3.
 
 \subsection{testCost for Null}
-\par catch a ORDER Null when passing in a null value to the cost function
+\par We will catch a \emph{ORDER Null} exception when passing in a \emph{null} value to the cost function.
 %Tang, Xinyue above
+\chapter{Javadoc}
+The full \textbf{javadoc} of the project is available in the same path under the \emph{\\javadoc} folder. The source \emph{javadoc} is also available in the source code comments for reference. Please use a web browser to navigate through the HTML files in the generated \emph{javadoc}.
 \begin{thebibliography}{A}
 
 \bibitem{1}
-Wikipedia contributors. (2018, December 24). Version control. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 06:12, March 10, 2019, from \url{https://en.wikipedia.org/w/index.php?title=Version_control&oldid=875227317}
-
-\bibitem{2}
-Wikipedia contributors. (2019, March 10). Systems development life cycle. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 06:13, March 10, 2019, from \url{https://en.wikipedia.org/w/index.php?title=Systems_development_life_cycle&oldid=887015682}
-
-\bibitem{3}
-Stolen, L. H. (1999). Distributed control system. \emph{international telecommunications energy conference.}
-
-\bibitem{4}
-Murayama, T. (1991). Distributed Control System. \emph{international conference on advanced robotics robots in unstructured environments}.
-
-\bibitem{5}
-Wikipedia contributors. (2019, March 6). Distributed control system. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 06:18, March 10, 2019, from \url{https://en.wikipedia.org/w/index.php?title=Distributed_control_system&oldid=886468871}
+Wikipedia contributors. (2019, March 22). JUnit. In \emph{Wikipedia, The Free Encyclopedia}. Retrieved 14:53, April 1, 2019, from \url{https://en.wikipedia.org/w/index.php?title=JUnit&oldid=888928403}
 
 \end{thebibliography}
 \end{document} 

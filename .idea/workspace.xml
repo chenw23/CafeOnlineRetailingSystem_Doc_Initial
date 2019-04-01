@@ -3,110 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3d039271-2d25-40dc-9fb2-ca4e7812320c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allpackages-index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/element-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/Lab2Application.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/Lab2ApplicationTests.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/constant/FileConstant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/constant/InfoConstant.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/constant/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/constant/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/Cappuccino.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/Coffee.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/Espresso.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/User.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/entity/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/CappuccinoRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/EspressoRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/UserRepository.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/impl/CappuccinoRepositoryImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/impl/EspressoRepositoryImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/impl/UserRepositoryImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/impl/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/impl/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/repository/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/AccountService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/PriceService.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/impl/AccountServiceImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/impl/PriceServiceImpl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/impl/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/impl/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/service/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/util/FileUtil.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/util/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/fudan/se/lab2/util/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-17.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-3.3.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip/dist/jszip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/member-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/member-search-index.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-search-index.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/resources/glass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/resources/x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/type-search-index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huang.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/huang.tex" beforeDir="false" afterPath="$PROJECT_DIR$/huang.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sub_steps.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sub_steps.tex" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +32,28 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javadoc/search.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/report.tex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="221" column="17" lean-forward="true" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -152,6 +73,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/sub_steps.tex" />
+        <option value="$PROJECT_DIR$/javadoc/search.js" />
         <option value="$PROJECT_DIR$/report.tex" />
       </list>
     </option>
@@ -174,6 +96,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,7 +108,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,6 +157,8 @@
       <workItem from="1554083693801" duration="771000" />
       <workItem from="1554095285655" duration="312000" />
       <workItem from="1554117420650" duration="1530000" />
+      <workItem from="1554127317308" duration="188000" />
+      <workItem from="1554130630192" duration="252000" />
     </task>
     <task id="LOCAL-00001" summary="Added vcs xml file">
       <created>1553042994497</created>
@@ -271,16 +195,24 @@
       <option name="project" value="LOCAL" />
       <updated>1553677895616</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Complemented the first half of the document and added the javadoc">
+      <created>1554127486001</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554127486002</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8571000" />
+    <option name="totallyTimeSpent" value="9011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2867804" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -316,7 +248,8 @@
     <MESSAGE value="Updated the PDF file" />
     <MESSAGE value="Revised for Lab 3" />
     <MESSAGE value="Finished my part" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished my part" />
+    <MESSAGE value="Complemented the first half of the document and added the javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complemented the first half of the document and added the javadoc" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -336,10 +269,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/javadoc/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/report.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state relative-caret-position="480">
+          <caret line="221" column="17" lean-forward="true" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
         </state>
       </provider>
     </entry>
