@@ -1,8 +1,13 @@
 \documentclass[./report.tex]{subfiles}
 \begin{document}
 \section{Junit}
+\subsection{Description of JUnit}
 \par JUnit is a unit testing framework for the Java programming language. JUnit has been important in the development of test-driven development, and is one of a family of unit testing frameworks which is collectively known as xUnit that originated with SUnit.
-\par JUnit is linked as a JAR at compile-time; the framework resides under package junit.framework for JUnit 3.8 and earlier, and under package org.junit for JUnit 4 and later.
+\par JUnit is linked as a JAR at compile-time; the framework resides under package \emph{ junit.framework} for JUnit 3.8 and earlier, and under package \emph{org.junit} for JUnit 4 and later.
+\subsection{Test fixture of JUnit}
+A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from \emph{junit.framework.TestCase}, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the \emph{@Test} annotation. If the situation requires it, it is also possible to define a method to execute before (or after) each (or all) of the test methods with the \emph{@Before} (or \emph{@After}) and \emph{@BeforeClass} (or \emph{@AfterClass}) annotations.
+\par
+We have adopted \emph{JUnit version 4.12} and the library is from \emph{Maven} remote repository. In our implementation of JUnit test fixture, we  have well utilized the  \emph{@Before} and \emph{@After} method to initialize and discard objects that will be used in all other \emph{@Test} methods.
 \section{JMock}
 \par JMock is a library that supports test-driven development of Java code with mock objects.
 \par Mock objects help you design and test the interactions between the objects in your programs.

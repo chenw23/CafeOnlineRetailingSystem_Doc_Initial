@@ -13,7 +13,7 @@
 16307110064\qquad17302010049\qquad 17302010063\qquad 16307110476 \\
 School of Software\\
 Fudan University
- }
+}
 \date{\today}
 \bibliographystyle{plain}
 \begin{document}
@@ -38,13 +38,13 @@ Our group members acted actively in their own roles together to finish the whole
 \end{enumerate}
 \section{The division of work in the team}
 \subsection{Division of work: Huang, Jiani}
-Build the JUnit environment and write all required environmental methods except the \emph{@test} method, such as \emph{@before} and \emph{@after}; write the \emph{@test} method for the \emph{login} method.
+Build the JUnit environment and write all required environmental methods except the \emph{@test} method, such as \emph{@before} and \emph{@after} methods; write the \emph{@test} method for the \emph{login()} method.
 \subsection{Division of work: Liu, Jiaxing}
-Write the \emph{checkName} and \emph{checkPassword} test method.
+Complete the \emph{checkName()} and \emph{checkPassword()} test method.
 \subsection{Division of work: Wang, Chen}
-Complete the \emph{checkName} and \emph{checkPassword} methods.
+Implement the \emph{checkName()} and \emph{checkPassword()} methods.
 \subsection{Division of work: Tang, Xinyue}
-Finish the test method of \emph{signUp}, \emph{checkStatus} and \emph{cost}.
+Finish the test method of \emph{signUp()}, \emph{checkStatus()} and \emph{cost()}.
 
 
 % Wang, Chen above
@@ -115,10 +115,10 @@ boolean checkPassword(String password);
 \par The test for signUp can be divided into two functions: the one for signUp successfully and the other for signUp failure.
 \subsection{signUp successfully}
 \par assertTrue method is used in this test function.
-\par To make sure we use a name that doesn't exist in user.csv, I used Date to construct a new name.
+\par To make sure we use a name that doesn't exist in user.csv, I used the \emph{Date} object to construct a new name.
 \begin{lstlisting}[language=java]
-    Date date = new Date();
-    String name = (new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss")).format(date);
+Date date = new Date();
+String name = (new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss")).format(date);
 \end{lstlisting}
 
 \subsection{signUp failed}
@@ -129,34 +129,34 @@ boolean checkPassword(String password);
 %Liu, Jiaxing below
 \par The test for username checking method consists of two parts: the one for legal one and the other for illegal one.
 \subsection{Legal name}
-\par I construct a string--starbb\_12AC--and it begins with the string starbb\_, and contains letters and digits at the right length. Therefore, it's legal.
+\par I construct a string--\emph{starbb\_12AC}--and it begins with the string starbb\_, and contains letters and digits at the right length. Therefore, it's legal.
 \subsection{Illegal name}
-\par It's very easy to construct an illegal name. A null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to WangChen's advice, I take it into account.
+\par It's very easy to construct an illegal name. A null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to \textbf{Wang, Chen}'s advice, I take it into account.
 \par Username checking methods are more complex than other test methods, and they contain many situations. But in fact, they are very normal and easy to implement. According to the classification method mentioned in class, I should design 5 methods to check whether the length of tested name is legal. But to be easy, I just implement 3 methods for three types of name: the shorter one, the right one and the longer one, which don't include the two methods for just right ones.
 \begin{lstlisting}[language=java]
-    @Test
-    public void testNameShorterThan8() {
-        //length here:7
-    }
+@Test
+public void testNameShorterThan8() {
+    //length here:7
+}
 \end{lstlisting}
 \begin{lstlisting}[language=java]
-    @Test
-    public void testNameOK() {
-        //length here:11
-    }
+@Test
+public void testNameOK() {
+    //length here:11
+}
 \end{lstlisting}
 \begin{lstlisting}[language=java]
-    @Test
-    public void testNameLongerThan49() {
-        //length here:50
-    }
+@Test
+public void testNameLongerThan49() {
+    //length here:50
+}
 \end{lstlisting}
 %Liu, Jiaxing above
 \section{Password checking method}
 %Liu, Jiaxing below
 \par The test for password checking method consists of two parts: the one for legal one and the other for illegal one.
 \subsection{Legal password}
-\par I construct a string--123\_abc12--and it contains letters, digits and underline at the right length. Therefore, it's legal.
+\par I construct a string--\emph{123\_abc12}--and it contains letters, digits and underline at the right length. Therefore, it's legal.
 \subsection{Illegal password}
 \par A legal password must contain all the three types: \textbf{letters}, \textbf{numbers} and \textbf{\_}. So in order to get a illegal password, there are many ways. Null password, a string without digits, a string without letters, a string without underline, a string with other special characters and a much shorter or longer one all are OK. So I design 7 methods to test. 
 \par There maybe a small trap in checking password. Well, if we couldn't find the differences between legal name and legal password,  we'll write some wrong codes. It's because a legal password must contain all the three types but a legal name is unnecessary to satify the need.
@@ -165,14 +165,13 @@ boolean checkPassword(String password);
 %Tang, Xinyue below
 \par The test for status checking method can be divided into two functions: the one for user login successfully and the other for user has not logged in.
 \subsection{status is logged in }
-\par we let a true user to login and then assertTrue checkStatus;
-
+\par We let a true user login and then call the \emph{checkStatus()} method. In this test, we \emph{assertTrue} on the return value of this method.
 \subsection{status is not logged in}
 \par assertFalse method is used in this test function.
 this test works well when runing separately, but failed when runing the whole Lab2ApplicationTests program.
 Liu, Jiaxing fixed this problem by adding:
 \begin{lstlisting}[language=java]
-    @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 \end{lstlisting}
 
 %Tang, Xinyue above
