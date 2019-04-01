@@ -102,11 +102,13 @@ boolean checkPassword(String password);
 %Huang, Jiani below
 \par The whole test for login can be divided into two functions: the one for login successfully and the other for login failure.
 \subsection{Login successfully}
-\par assertTrue method is used in this test function.
-
+\par assertTrue method is used in this test function. If the login() method returns true, then the test method will be passed.
 \subsection{Login failed}
-\par assertEquals method is used in this test function.  If we fail to login, a runtime exception will be thrown. Therefore, we should compare the message of exception with the expected string.
-
+\par If we fail to login, a runtime exception will be thrown. AssertEquals method is used in this test function to handle the exception message. By comparing the two strings, we successfully test th login failure situation.
+\subsubsection{User Is Null}
+ \par If the username input doesn't exist in the database, the exception message will be " Entity not found." 
+\subsubsection{Password Is Incorrect}
+\par If the username matches but password does not in the database, the exception message will be "password or username error.". 
 %Huang, Jiani above
 \section{Sign up method}
 %Tang, Xinyue below
