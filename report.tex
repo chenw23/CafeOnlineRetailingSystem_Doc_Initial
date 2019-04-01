@@ -132,6 +132,7 @@ boolean checkPassword(String password);
 \par I construct a string--starbb\_12AC--and it begins with the string starbb\_, and contains letters and digits. Therefore, it's legal.
 \subsection{Illegal name}
 \par It's very easy to construct an illegal name. A Null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to WangChen's advice, I take it into account.
+\par Username checking methods are more complex than others, and they contain many situations. 
 %Liu, Jiaxing above
 \section{Password checking method}
 %Liu, Jiaxing below
