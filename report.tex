@@ -132,7 +132,25 @@ boolean checkPassword(String password);
 \par I construct a string--starbb\_12AC--and it begins with the string starbb\_, and contains letters and digits. Therefore, it's legal.
 \subsection{Illegal name}
 \par It's very easy to construct an illegal name. A Null string, a string with other special characters, a string not beginning with the specified string and a much shorter or longer one all are wrong names. So I design 5 methods to cover all situations. In the beginning, I forgot to consider the situation that the name may be null. Thanks to WangChen's advice, I take it into account.
-\par Username checking methods are more complex than others, and they contain many situations. 
+\par Username checking methods are more complex than others, and they contain many situations. But in fact, they are very normal and easy to implement. According to the classification method mentioned in class, I should design 5 methods to check whether the length of tested name is legal. But to make it easy, I just implement 3 methods for three types of name: the shorter one, the right one and the longer one, which don't include the two methods for just right ones.
+\begin{lstlisting}[language=java]
+    @Test
+    public void testNameShorterThan8() {
+        //length here:7
+    }
+\end{lstlisting}
+\begin{lstlisting}[language=java]
+    @Test
+    public void testNameOK() {
+        //length here:11
+    }
+\end{lstlisting}
+\begin{lstlisting}[language=java]
+    @Test
+    public void testNameLongerThan49() {
+        //length here:50
+    }
+\end{lstlisting}
 %Liu, Jiaxing above
 \section{Password checking method}
 %Liu, Jiaxing below
